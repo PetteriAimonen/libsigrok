@@ -117,6 +117,10 @@ SR_PRIV int scpi_dmm_get_mq(const struct sr_dev_inst *sdi,
 			*mqitem = item;
 		ret = SR_OK;
 	}
+	else
+	{
+		sr_warn("Unknown measurement quantity: %s", have);
+	}
 
 	if (rsp) {
 		*rsp = response;
